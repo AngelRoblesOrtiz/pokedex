@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = 'UTF-8'/>
+        <meta http-equiv = 'X-UA-Compatible' content = 'IE = edge'/>
+        <meta name = 'viewport' content = 'width = device-width, initial-scale = 1.0'/>
+        <title>Pokédex - Home</title>
+        <link rel = 'stylesheet' href = './style.css' type = 'text/css'>
+        <link rel = 'stylesheet' href = './css/pokemonDisplay.css' type = 'text/css'>
+        <link rel = 'icon' href = '../images/pokeball.png'>
+    </head>
+    <body>
+        <script src = './script/random.js'></script>
+        <main>
+            <div class = 'header'> <!--Anything header related goes in here-->
+                <img src = '../images/activePokeball.gif' class = 'header-ball-logo'> <!--Moving pokeball logo-->
+                <h2 class = 'header-ball-text'>Pokédex</h2> <!--Header pokedex text-->
+                <img src = '../images/pokemonLogo.png' alt = 'pokemon logo' class = 'header-pkmn-logo'> <!--Main header pokedex text-->
+                <div class = 'header-links-container'>
+                    <ul class = 'header-links'>
+                        <li class = 'header-links-list'>
+                            <a href = 'index.html' class = 'header-links-list-options'>Home</a>
+                        </li>
+                        <li class = 'header-links-list'>
+                            <a href = './pages/searchPokemon.html' class = 'header-links-list-options'>Search</a>
+                        </li>
+                        <li class = 'header-links-list'>
+                            <a href = '' class = 'header-links-list-options'>Games</a>
+                        </li>
+                        <li class = 'header-links-list'>
+                            <a href = './pages/about.html' class = 'header-links-list-options'>About</a>
+                        </li>
+                        <li class = 'header-links-list'>
+                            <a href = './pages/help.html' class = 'header-links-list-options'>Help</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h1 class = 'random-pokemon-text'>Random Pokémon</h1>
+            <div class = 'home-container'>
+                <div class = 'home-random-pokemon'>
+                    
+                </div>
+
+                <div class = 'body-text'>
+                    <h2 >Mysterious Creatures You Catch with a Poké Ball</h2>
+                    <p>
+                        Pokémon are mysterious creatures filled with many secrets. 
+                        Some Pokémonlive alongside humans and some live in the wild 
+                        in grassy fields, caves, or the sea, but much about their ecology 
+                        that remains unknown. One of their main features is that they can 
+                        be caught using a Poké Ball, which allows them to be carried around.
+                    </p>
+                    <h2>How many kinds of Pokémon are there?</h2>
+                    <p>
+                        Just how many kinds of Pokémon exist? The exact number is unknown. 
+                        While over 1,000 kinds of Pokémon have been confirmed, as of yet unseen 
+                        Pokémon will surely be discovered in the future.
+                    </p>
+                    <img src = '../images/kantoStarters.avif' text = 'kanto starters' class = 'kanto-starters-img'>
+                    <h2>Pokémon grow stronger through battle</h2>
+                    <p>Pokémon evolve by leveling up. For example, In the case of Pidgey:</p>
+                    <img src = '../images/pidgeyLine.png' text = 'pidgey line' class = 'pidgey-img'>
+                    <p>
+                        Pokémon learn a variety of moves that they can then use in battle. 
+                        Pokémon grow stronger and level up through battle. Some Pokémon not 
+                        only level up, but evolve as well.
+                    </p>
+                    <h2>There are many types of Pokémon</h2>
+                    <p>
+                        Pokémon are classified into 18 types based on their characteristics. 
+                        For example, Pikachu is an Electric type Pokémon and Magikarp is a Water 
+                        type. There are some Pokémon who belong to two types, such as Jigglypuff, 
+                        who is both Normal and Fairy. Each type has special affinities that have a 
+                        big effect on battles. If your opponent's Pokémon has the right type of 
+                        affinity, it can be a huge advantage in battle.
+                    </p>
+                </div>
+
+                <div class = 'additional-links-container'>
+                    <h2 class = 'pop-link-text'>Popular Quick-Links</h2>
+                    <div class = 'links-container'>
+
+                        <div class = 'links-container-row'>
+                            <div class = 'left-links'>
+                                <a href = './pages/natPokedex.html' class = 'links'><p>National Pokédex</p></a>
+                                <a href = '' class = 'links'><p>Pokémon Stats</p></a>
+                            </div>
+                            <div class = 'right-links'>
+                                <a href = './pages/typeChart.html' class = 'links'><p>Type Chart</p></a>
+                                <a href = './pages/shinyPokemon.html' class = 'links'><p>Shiny Pokémon</p></a>
+                            </div>
+                        </div>
+
+                        <div class = 'fav-pkmn-container'>
+                            <div class = 'left-pkmn'>
+                                <ul class = 'fav-pkmn-list'>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0006
+                                        <a href = './searchPokemon.html?pokemon=Charizard' class = 'fav-pkmn'>Charizard</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0025
+                                        <a href = './searchPokemon.html?pokemon=Pikachu' class = 'fav-pkmn'>Pikachu</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0034
+                                        <a href = './searchPokemon.html?pokemon=Nidoking' class = 'fav-pkmn'>Nidoking</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0133
+                                        <a href = './searchPokemon.html?pokemon=Eevee' class = 'fav-pkmn'>Eevee</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0135
+                                        <a href = './searchPokemon.html?pokemon=Jolteon' class = 'fav-pkmn'>Jolteon</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0142
+                                        <a href = './searchPokemon.html?pokemon=Aerodactyl' class = 'fav-pkmn'>Aerodactyl</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0149
+                                        <a href = './searchPokemon.html?pokemon=Dragonite' class = 'fav-pkmn'>Dragonite</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0150
+                                        <a href = './searchPokemon.html?pokemon=Mewtwo' class = 'fav-pkmn'>Mewtwo</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0212
+                                        <a href = './searchPokemon.html?pokemon=Scizor' class = 'fav-pkmn'>Scizor</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0248
+                                        <a href = './searchPokemon.html?pokemon=Tyranitar' class = 'fav-pkmn'>Tyranitar</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class = 'right-pkmn'>
+                                <ul class = 'fav-pkmn-list'>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0257
+                                        <a href = './searchPokemon.html?pokemon=Blaziken' class = 'fav-pkmn'>Blaziken</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0282
+                                        <a href = './searchPokemon.html?pokemon=Gardevoir' class = 'fav-pkmn'>Gardevoir</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0300
+                                        <a href = './searchPokemon.html?pokemon=Skitty' class = 'fav-pkmn'>Skitty</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0385
+                                        <a href = './searchPokemon.html?pokemon=Jirachi' class = 'fav-pkmn'>Jirachi</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0405
+                                        <a href = './searchPokemon.html?pokemon=Luxray' class = 'fav-pkmn'>Luxray</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0423
+                                        <a href = './searchPokemon.html?pokemon=Gastrodon' class = 'fav-pkmn'>Gastrodon</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0658
+                                        <a href = './searchPokemon.html?pokemon=Greninja' class = 'fav-pkmn'>Greninja</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0925
+                                        <a href = './searchPokemon.html?pokemon=Maushold-family-of-four' class = 'fav-pkmn'>Maushold</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0937
+                                        <a href = './searchPokemon.html?pokemon=Ceruledge' class = 'fav-pkmn'>Ceruledge</a>
+                                    </li>
+                                    <li class = 'fav-pkmn-val'>
+                                        #0939
+                                        <a href = './searchPokemon.html?pokemon=Bellibolt' class = 'fav-pkmn'>Bellibolt</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

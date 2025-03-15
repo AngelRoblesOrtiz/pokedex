@@ -1,0 +1,408 @@
+.pokemonBox {
+    background: darkgrey;
+    width: 25%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0%;
+    padding: 0.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: visible;
+    border: solid black 5px;
+    border-radius: 10px;
+    visibility:hidden;
+}
+
+.search-container {
+    margin-top: 1%;
+    margin-left: 1%;
+    width: auto;
+    height: fit-content;
+}
+
+.home-random-pokemon { /*Main container for the pokemon*/
+    background: darkgrey;
+    width: 25%;
+    height: fit-content;
+    margin-left: 0.5%;
+    margin-top: -3.5%;
+    padding: 0.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: visible;
+    border: solid black 5px;
+    border-radius: 10px;
+    visibility: visible;
+}
+
+.pkmn-name-id-img-container {
+    background: lightgrey;
+    padding: 2%;
+    border: solid lightgrey 1px;
+    border-radius: 10px;
+}
+
+.pkmn-name-id-container {
+    background: white;
+    width: 97%;
+    height: fit-content;
+    padding: 1%;
+    border: solid white 1px;
+    border-radius: 10px;
+    display: inline-flex;
+}
+
+.pkmn-name-container {
+    background: white;
+    width: fit-content;
+    height: fit-content;
+    border: solid white 1px;
+    border-radius: 10px;
+}
+
+.pkmn-name {
+    color: black;
+    margin: 0;
+}
+
+.pkmn-id-container {
+    background: white;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 3%;
+    border: solid white 1px;
+    border-radius: 10px;
+}
+
+.pkmn-id {
+    margin: 0;
+}
+
+.pkmn-img-container {
+    background: white;
+    margin-top: 2.5%;
+    padding: 1%;
+    border: solid white 1px;
+    border-radius: 10px;
+}
+
+.pkmn-img {
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.pkmn-info {
+    height: auto;
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.type-and-region {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    position: relative;
+}
+
+.pkmn-type-container {
+    background: lightgrey;
+    width: 9.6em;
+    height: 3.5em;
+    margin-right: 2%;
+    padding: 1%;
+    border: solid lightgrey 1px;
+    border-radius: 10px;
+}
+
+.type-wrd {
+    text-align: center;
+    font-weight: bold;
+    margin-top: -10%;
+}
+
+.pkmn-type {
+    background: white;
+    text-align: center;
+    height: fit-content;
+    margin-top: -8.5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: solid white 1px;
+    border-radius: 10px;
+}
+
+.type-val {
+    margin: 0;
+    display: inline-flex;
+}
+
+.pkmn-region-container {
+    background: lightgrey;
+    width: 9.6em;
+    height: 3.5em;
+    padding: 1%;
+    border: solid lightgrey 1px;
+    border-radius: 10px;
+}
+
+.region-wrd {
+    text-align: center;
+    font-weight: bold;
+    margin-top: -10%;
+}
+
+.pkmn-region {
+    background: white;
+    text-align: center;
+    height: fit-content;
+    margin-top: -8.5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: solid white 1px;
+    border-radius: 10px;
+}
+
+.region-val {
+    margin: 0;
+}
+
+.weight-and-height {
+    width: 100%;
+    height: fit-content;
+    margin-top: 2%;
+    display: flex;
+    position: relative;
+}
+
+.pkmn-weight-container {
+    background: lightgrey;
+    width: 9.6em;
+    height: 3.5em;
+    margin-right: 2%;
+    padding: 1%;
+    border: solid lightgrey 1px;
+    border-radius: 10px;
+}
+
+.weight-wrd {
+    text-align: center;
+    font-weight: bold;
+    margin-top: -10%;
+}
+
+.pkmn-weight {
+    background: white;
+    text-align: center;
+    height: fit-content;
+    margin-top: -8.5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: solid white 1px;
+    border-radius: 10px;
+}
+
+.weight-val {
+    margin: 0%;
+}
+
+.pkmn-height-container {
+    background: lightgrey;
+    width: 9.6em;
+    height: 3.5em;
+    padding: 1%;
+    border-style: solid lightgrey 1px;
+    border-radius: 10px;
+}
+
+.height-wrd {
+    text-align: center;
+    font-weight: bold;
+    margin-top: -10%;
+}
+
+.pkmn-height {
+    background: white;
+    text-align: center;
+    height: fit-content;
+    margin-top: -8.5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-style: solid white 1px;
+    border-radius: 10px;
+}
+
+.height-val {
+    margin: 0%;
+}
+
+.abilities-container {
+    background: lightgrey;
+    width: 97.5%;
+    height: 3.5em;
+    margin-top: 2%;
+    padding: 1%;
+    border: solid lightgrey 2px;
+    border-radius: 10px;
+}
+
+.abilities-wrd {
+    text-align: center;
+    font-weight: bold;
+    margin-top: -5.5%;
+}
+
+.pkmn-abilities {
+    background: white;
+    text-align: center;
+    height: fit-content;
+    margin-top: -4%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: solid white 1px;
+    border-radius: 10px;
+}
+
+.abilities-val {
+    margin: 0%;
+}
+
+.base-experience-and-status {
+    width: 100%;
+    height: fit-content;
+    margin-top: 2%;
+    display: flex;
+    position: relative;
+}
+
+.pkmn-base-experience-container {
+    background: lightgrey;
+    width: 9.6em;
+    height: 3.5em;
+    margin-right: 2%;
+    padding: 1%;
+    border: solid lightgrey 1px;
+    border-radius: 10px;
+}
+
+.base-experience-wrd {
+    text-align: center;
+    font-weight: bold;
+    margin-top: -10%;
+}
+
+.pkmn-base-experience {
+    background: white;
+    text-align: center;
+    height: fit-content;
+    margin-top: -8.5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: solid white 1px;
+    border-radius: 10px;
+}
+
+.base-experience-val {
+    margin: 0%;
+}
+
+.pkmn-status-container {
+    background: lightgrey;
+    width: 9.6em;
+    height: 3.5em;
+    padding: 1%;
+    border: solid lightgrey 1px;
+    border-radius: 10px;
+}
+
+.status-wrd {
+    text-align: center;
+    font-weight: bold;
+    margin-top: -10%;
+}
+
+.pkmn-status {
+    background: white;
+    text-align: center;
+    height: fit-content;
+    margin-top: -8.5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border: solid white 1px;
+    border-radius: 10px;
+}
+
+.status-val {
+    margin: 0%;
+}
+
+.base-stats-container {
+    background: lightgrey;
+    margin-top: 2%;
+    border: solid lightgrey 1px;
+    border-radius: 10px;
+}
+
+.base-stats-wrd {
+    text-align: center;
+    font-weight: bold;
+    margin: 0%;
+}
+
+.base-stats-table {
+    width: 100%;
+    border: solid lightgrey 2px;
+    border-radius: 10px;
+}
+
+th {
+    border: solid black 2px;
+}
+
+.base-stat-wrd {
+    background: white;
+    width: 25%;
+    border-radius: 10px;
+}
+
+.hp-stat {
+    background: red;
+    border-radius: 10px;
+}
+
+.atk-stat {
+    background: orange;
+    border-radius: 10px;
+}
+
+.def-stat {
+    background: yellow;
+    border-radius: 10px;
+}
+
+.spatk-stat {
+    background: blue;
+    border-radius: 10px;
+}
+
+.spdef-stat {
+    background: green;
+    border-radius: 10px;
+}
+
+.speed-stat {
+    background: violet;
+    border-radius: 10px;
+}
+
+.total-stat {
+    background: white;
+    border-radius: 10px;
+}

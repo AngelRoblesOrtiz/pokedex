@@ -1,0 +1,600 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+a {
+    margin: 0;
+}
+
+/*-------------------------------------Scroll Bar--------------------------------------------*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background:black;
+    border-radius: 10px;
+}
+/*---------------------------------------Header----------------------------------------------*/
+.header {
+    background: red;
+    top: 0px;
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0 20px; 
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.header-pkmn-logo {
+    width: auto;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+    margin-top: 0.5%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-ball-logo {
+    width: auto;
+    height: auto;
+    max-width: 64px;
+    max-height: 64px;
+    position: absolute;
+    left: 20px;
+}
+
+.header-ball-text {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    left: 90px;
+    -webkit-text-stroke: 1px black;
+}
+
+.header-links-container {
+    margin-left: auto;
+}
+
+.header-links {
+    list-style: none;
+    display: flex;
+}
+
+.header-links-list {
+    display: inline-block;
+    position: relative;
+}
+
+.header-links-list:hover {
+    background: darkred;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.header-links-list-options {
+    color: white;
+    display: block;
+    padding: 20px 25px;
+    text-decoration: none;
+}
+
+/*---------------------------------------Search----------------------------------------------*/
+.search {
+    width: fit-content;
+    margin-top: 7.5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1px 4px;
+    border-style: solid;
+    border-color: rgb(169, 168, 168);
+    border-radius: 10px;
+}
+
+.search-input {
+    background: white;
+    width: 25em;
+    height: 2em;
+    border-style: solid;
+    border-color: white;
+    outline: none;
+}
+
+.search-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.search-btn {
+    background: rgb(56, 56, 56);
+    color: white;
+    height: 2em;
+    border-style: solid white;
+    border-radius: 5px;
+}
+
+/*----------------------------------------Home Container-----------------------------------------*/
+.home-container {
+    width: 100%;
+    height: fit-content;
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+}
+
+.random-pokemon-text {
+    margin-top: 4.5%;
+    margin-left: 0.5%;
+}
+
+/*-----------------------------------------Body text-----------------------------------------*/
+.body-text {
+    background: white;
+    width: 35%;
+    margin-top: -4%;
+    margin-left: 2%;
+}
+
+.kanto-starters-img {
+    max-width: 100%;;
+    max-height: 447px;
+    width: auto;
+    height: auto;
+}
+
+.pidgey-img {
+    max-width: 100%;
+    max-height: 447px;
+    width: auto;
+    height: auto;
+}
+
+/*-------------------------------------------Quick Links---------------------------------------*/
+.additional-links-container {
+    background: lightgrey;
+    height: fit-content;
+    width: 20em;
+    margin-top: -4%;
+    margin-left: 2.5%;
+    padding: 1%;
+    border: solid lightgrey;
+    border-radius: 10px;
+}
+
+.pop-link-text {
+    color: black !important;
+}
+
+.links-container {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border: solid white;
+    border-radius: 10px;
+}
+.links-container-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-links {
+    height: fit-content;
+    margin-right: 5%;
+}
+
+.right-links {
+    height: fit-content;
+}
+
+.links {
+    color: #2769BE;
+    text-decoration: none;
+}
+
+.links:hover {
+    color: darkred;
+    text-decoration-line: underline;
+}
+
+.fav-pkmn-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-pkmn {
+
+    margin-right: 5%;
+}
+
+.fav-pkmn-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.fav-pkmn-val {
+    color: grey;
+}
+
+.fav-pkmn {
+    color: #2769BE;
+    font-size: 1em !important;
+    text-decoration: none;
+}
+
+.fav-pkmn:hover {
+    color: darkred;
+    text-decoration-line: underline;
+}
+/*----------------------------------------Type Chart------------------------------------------*/
+.type-overall-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.type-container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+
+.type-chart-text {
+    margin-top: 4.5%;
+    margin-left: 0.5%;
+}
+
+.type-chart-container {
+    background: lightgrey;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 1%;
+    margin-left: 1%;
+    border: solid lightgrey;
+    border-radius: 10px;
+}
+
+.type-chart-img-box {
+    background: white;
+    border: solid black;
+    border-radius: 5px;
+    width: fit-content;
+    height: 1.5em;
+}
+
+.type-chart-img-box-flip {
+    background: white;
+    border: solid black;
+    border-radius: 5px;
+    width: 1.5em;
+    height: fit-content;
+}
+
+.D-A-img {
+    max-width: 60px;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+}
+
+.white-box {
+    background: white;
+    border: solid white;
+}
+
+.green-box {
+    font-family:'Times New Roman';
+    background: green;
+    color: gold;
+    border: solid green;
+}
+
+.red-box {
+    font-family:'Times New Roman';
+    background: brown;
+    color: gold;
+    border: solid brown;
+}
+
+.black-box {
+    font-family:'Times New Roman';
+    background: black;
+    color: gold;
+    border: solid black;
+}
+
+.pkmn-type-info-and-individuals {
+    width: 40%;
+    margin-top: 1%;
+    margin-left: 2.5%;
+}
+
+.pkmn-type-individuals {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.type-page-headers {
+    margin-top: 5%;
+}
+
+.row-one-types {
+    margin-top: 2.5%;
+}
+
+.small-txt {
+    color: grey;
+    font-size: small;
+}
+
+.key {
+    display: flex;
+    flex-direction: row;
+}
+
+.right-key {
+    margin-top: -1%;
+    margin-left: 1%;
+}
+
+.effect-txt {
+    font-size: small;
+}
+
+.download-button {
+    background: #000EBF;
+    padding: 1em 3em;
+    border: solid white;
+    border-radius: 5px;
+}
+
+.download-button:hover {
+    border-color: #000EBF;
+}
+
+.download-txt {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.type-chart-changes-txt {
+    margin-top: 2.5%;
+}
+
+.zero-cube {
+    font-family:'Times New Roman';
+    background: black;
+    color: gold;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.half-cube {
+    font-family:'Times New Roman';
+    background: brown;
+    color: gold;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.blank-cube {
+    background: white;
+    color: white;
+    border: solid grey 1px;
+    border-radius: 1px;
+    width: 1.9em;
+    height: 2em;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.double-cube {
+    font-family:'Times New Roman';
+    background: green;
+    color: gold;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.abt-pkmn-type-header {
+    margin-top: 0;
+}
+
+.type-container-two {
+    margin-top: -37.5%;
+}
+
+.pkmn-type-info {   
+    width: 40em;
+    height: fit-content;
+    margin-left: 1%;
+}
+
+.gen-2-5, .gen-2-5-list, .gen-1-h3, .gen-1-list, .type-chart-changes-body {
+    width: fit-content;
+}
+
+
+
+/*----------------------------------------IMG PAGE-----------------------------------------*/
+.img-page-background {
+    background: #333333;
+    width: auto;
+    height: auto;
+}
+
+.type-chart-img-big {
+    max-width: 552px;
+    max-height: 552px;
+    width: auto;
+    height: auto;
+    margin-left: 30%;
+}
+
+/*--------------------------------National Pokdex-----------------------------------------*/
+.nat-pkdx-cntr, .shiny-pkdx-cntr {
+    text-align: center;
+}
+
+.nat-pkdx-headline, .shiny-pkdx-headline {
+    margin-top: 5%;
+}
+
+.nat-pkdx-jump, .shiny-pkdx-jump {
+    margin-top: 1%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nat-pkdx-jump-links, .shiny-pkdx-jump-links {
+    background: #333333;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.nat-pkdx-li, .shiny-pkdx-li {
+    padding: 10px 15px;
+    font-size: small;
+}
+
+#gen-1, #gen-2, #gen-3, #gen-4, #gen-5, #gen-6, #gen-7, #gen-8, #gen-9,
+#shiny-gen-1, #shiny-gen-2, #shiny-gen-3,  #shiny-gen-4, #shiny-gen-5, 
+#shiny-gen-6, #shiny-gen-7, #shiny-gen-8, #shiny-gen-9 {
+    width: 75%;
+    margin-left: 12.5%;
+}
+
+
+.nat-pkdx-jump-links-txt, .shiny-pkdx-jump-links-txt {
+    color: white;
+    text-decoration: none;
+}
+
+.nat-pkdx-jump-links-txt:hover, .shiny-pkdx-jump-links-txt:hover {
+    color: grey;
+}
+
+.gen-pkmn-indicator, .shiny-gen-pkmn-indicator {
+    margin-top: 2.5%;
+    margin-left: 1%;
+}
+
+.nat-pkdx-box-gen, .shiny-pkdx-box-gen {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pkmn-down-1, .pkmn-down-2, .pkmn-down-3, .pkmn-down-4, .pkmn-down-5, .pkmn-down-6, 
+.pkmn-down-7, .pkmn-down-8, .pkmn-down-9, .shiny-pkmn-down-1, .shiny-pkmn-down-2, 
+.shiny-pkmn-down-3, .shiny-pkmn-down-4, .shiny-pkmn-down-5, .shiny-pkmn-down-6, 
+.shiny-pkmn-down-7, .shiny-pkmn-down-8, .shiny-pkmn-down-9 {
+    display: flex;
+    flex-direction: column;
+}
+
+.pokemon, .shiny-pokemon {
+    width: calc(100% / 9); 
+    box-sizing: border-box;
+}
+
+.pkmn-line {
+    background: white;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0.5%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.pkmn-grid {
+    width: fit-content;
+}
+
+.pkmn-grid-img {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+}
+
+.pkmn-grid-idx {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.pkmn-grid-idx-txt {
+    color: grey;
+    padding: 0;
+    margin: 0;
+    font-size: small;
+}
+
+.pkmn-grid-name {
+    width: 7em;
+    height: fit-content;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.pkmn-grid-name-txt {
+    color: black;
+    padding: 0;
+    margin: 0;
+    font-size: small;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.pkmn-grid-name-txt:hover {
+    color: darkred;
+    text-decoration: underline;
+}
+
+.pkmn-grid-type {
+    text-align: center;
+}

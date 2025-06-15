@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+body {
+  padding-top: 0;
+  background: #f5f5f5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pokedex-header {
+  width: 100%;
+  background-color: #d32f2f;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  z-index: 1000;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18); /* darker, deeper shadow */
 }
 
-.App-link {
-  color: #61dafb;
+.pokedex-logo {
+  height: 90px;
+  margin: 10px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;      /* or any width you prefer */
+  width: 100%;
+  min-height: 100vh;
+  margin: 100px auto 0 auto; /* center horizontally, margin-top for header */
+  padding: 24px;
+  background: white;
+  border-radius: 5px;
+  text-align: left;
+  box-sizing: border-box;
+  display: block;
+}
+
+.pokemon-card {
+  width: 80%;
+  max-width: 350px;    /* or your preferred max width */
+  min-width: 220px;    /* optional: prevents it from getting too small */
+  margin: 0;
+  background: #9FA19F;
+  border: solid #676967 5px;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0.5%;
+}
+
+.pkmn-name-id-img {
+  background: #C1C2C1;
+  border-radius: 10px;
+  padding: 2%;
+  margin: 0;
+}
+
+.pkmn-name-id {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.pkmn-name-id h1 {
+  margin: 0 0 0 16px;
+  font-size: 2rem;
+  text-align: left;
+}
+
+.pkmn-name-id h2 {
+  margin: 0 16px 0 0;
+  font-size: 1.5rem;
+  text-align: right;
+}
+
+.pokemon-image {
+  background: white;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin-top: 3%;
+  border-radius: 10px;
+}
+
+.pkmn-type-img-container {
+  background: white;
+  width: 100%;
+  border-radius: 10px;
+  padding: 2% 0 2% 0;
+  align-self: flex-start;
+}
+
+.pkmn-region-container {
+  background: white;
+  width: 100%;
+  border-radius: 10px;
+  padding: 2% 0 2% 0;
+  align-self: flex-end;
+}
+
+.pkmn-type-region {
+  display: flex;
+  width: 100%;
+  gap: 5px; /* optional: space between the two */
+}
+
+.pkmn-type,
+.pkmn-region {
+  background: #C1C2C1;
+  border-radius: 10px;
+  flex: 1;
+  padding: 0 5px 2% 5px;
+  box-sizing: border-box;
+  margin-top: 2%;
+}
+
+.pkmn-type-text, .pkmn-region-text {
+  font-weight: bold;
+  padding: 5px 0 5px 0;
 }

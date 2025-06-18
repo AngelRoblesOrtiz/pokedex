@@ -20,7 +20,7 @@ p {
   left: 0;
   height: 80px;
   z-index: 1000;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.18); /* darker, deeper shadow */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
 }
 
 .pokedex-logo {
@@ -217,4 +217,34 @@ th {
 .pokemon-type-image {
   position: relative;
   top: 3px;
+}
+
+.header-options-container {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header-links {
+  list-style: none;
+  display: flex;
+}
+
+.header-links-list {
+  display: inline-block;
+  position: relative;
+}
+
+.header-links-list:hover {
+  font-weight:bold;
+}
+
+.header-links-list-options {
+  color: white;
+  display: block;
+  padding: 20px 25px;
+  text-decoration: none;
+  min-width: 110px;
+  text-align: center;
 }

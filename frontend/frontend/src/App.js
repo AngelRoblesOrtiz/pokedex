@@ -57,7 +57,7 @@ function App() {
 
     fetchPokemon();
 
-    const interval = setInterval(fetchPokemon, 20000);
+    const interval = setInterval(fetchPokemon, 10000);
 
     return () => clearInterval(interval);
   }, []);
@@ -76,8 +76,24 @@ function App() {
           alt = 'Pokédex Logo'
           className = 'pokedex-logo'
         />
-        <div className = 'header-options'>
+        <div className = 'header-options-container'>
+          <ul className = 'header-links'>
+            <li class = 'header-links-list'>
+              <a href = '' class = 'header-links-list-options'>Home</a>
+            </li>
 
+            <li class = 'header-links-list'>
+              <a href = '' class = 'header-links-list-options'>Search</a>
+            </li>
+
+            <li class = 'header-links-list'>
+              <a href = '' class = 'header-links-list-options'>About</a>
+            </li>
+
+            <li class = 'header-links-list'>
+              <a href = '' class = 'header-links-list-options'>Help</a>
+            </li>
+          </ul>
         </div>
       </header>
       <div className = 'container'>

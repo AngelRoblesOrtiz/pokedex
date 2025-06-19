@@ -23,6 +23,28 @@ p {
   box-shadow: 0 6px 16px rgba(0,0,0,0.18);
 }
 
+.footer {
+  width: 100%;
+  background: #222;
+  color: #eee;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  z-index: 999;
+}
+
+.footer-link {
+  color: #90caf9;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.2s;
+}
+.footer-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .pokedex-logo {
   height: 90px;
   margin: 10px 0;
@@ -83,6 +105,7 @@ p {
 .pkmn-name-id h2 {
   margin: 0 16px 0 0;
   font-size: 1.5rem;
+  font-weight: bold;
   text-align: right;
 }
 
@@ -247,4 +270,19 @@ th {
   text-decoration: none;
   min-width: 110px;
   text-align: center;
+}
+
+.home-container {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.pokeballs-img, .pidgeot-img, .home-text {
+  max-width: 450px;
+}
+
+.popular-quick-links {
+  background: lightgrey;
+  border-radius: 10px;
 }

@@ -1,5 +1,7 @@
 import React from 'react';
-import PokemonCard from './PokemonCard';
+import PokemonCard from './PokemonCard.js';
+import Popular from './Popular.js';
+import HomeText from './HomeText.js';
 
 function updateDivStyle(pokemonType) {
     const typeStyles = {
@@ -44,60 +46,40 @@ function updateDivStyle(pokemonType) {
     });
 }
 
-function Search() {
-    const [query, setQuery] = React.useState('');
+function getRandom() {
+    const min = 1;
+    const max = 1025;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function Home() {
     const [pokemon, setPokemon] = React.useState(null);
 
-    const fetchPokemon = () => {
-        if (!query) return;
+    React.useEffect(() => {
+        const fetchPokemon = () => {
+            const randomId = getRandom();
+            fetch(`http://localhost:5000/api/pokedex?id=${randomId}`)
+                .then(res => res.json())
+                .then(data => setPokemon(data));
+        };
 
-        // Allow letters, numbers, and hyphens for names
-        const isId = /^\d+$/.test(query) && Number(query) > 0 && Number(query) <= 1025;
-        const isName = /^[a-zA-Z0-9\-]+$/.test(query);
-
-        if (!isId && !isName) {
-            return;
-        }
-
-        fetch(`http://localhost:5000/api/pokedex?id=${query}`)
-            .then(res => {
-                if (!res.ok) throw new Error('Not found');
-                return res.json();
-            })
-            .then(data => setPokemon(data))
-            .catch(() => {})
-            .finally(() => setQuery(''));
-    };
-
-    const handleKeyDown = (e) => {
-        if (e.key === 'Enter') {
-            fetchPokemon();
-        }
-    };
+        fetchPokemon();
+        const interval = setInterval(fetchPokemon, 10000);
+        return () => clearInterval(interval);
+    }, []);
 
     React.useEffect(() => {
         if (pokemon && pokemon.types && pokemon.types.length > 0) {
             updateDivStyle(pokemon.types[0].toLowerCase());
         }
     }, [pokemon]);
-
     return (
-        <div className = 'search-container'>
-            <div className = 'search-bar-container'>
-                <input 
-                    type = 'text' 
-                    placeholder = 'Search Pokémon by name or ID' 
-                    className = 'search-bar'
-                    value = {query}
-                    onChange = {(e) => setQuery(e.target.value)}
-                    onKeyDown = {handleKeyDown}
-                    autocomplete = 'off'
-                />
-                <button className = 'search-button' onClick = {fetchPokemon}>Search</button>
-            </div>
-            <PokemonCard pokemon = {pokemon} />
+        <div className = 'home-container'>
+            <PokemonCard pokemon = {pokemon}/>
+            <HomeText/>
+            <Popular/>       
         </div>
-    );
+    )
 }
 
-export default Search;
+export default Home;

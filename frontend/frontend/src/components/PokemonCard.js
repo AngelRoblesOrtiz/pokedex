@@ -157,7 +157,17 @@ function getTypeImages(typeNames) {
 }
 
 function PokemonCard({ pokemon }) {
-    if (!pokemon) return <div>Loading...</div>;
+    if (!pokemon) {
+      return (
+        <div className = 'pokemon-card'>
+          <img 
+            src = {process.env.PUBLIC_URL + '/images/pokeball.png'} 
+            alt = 'Loading' 
+            className = 'pokemon-image' 
+          />
+        </div>
+      )
+    }
 
     return (
         <div className = 'pokemon-card'>

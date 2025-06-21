@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/api/pokedex')
-def get_random_pokemon():
+def get_pokemon():
     poke_id = request.args.get('id')
     if not poke_id:
         return jsonify({'error' : 'No Pokémon or name provided.'}), 400
@@ -30,6 +30,16 @@ def get_random_pokemon():
     }
 
     return pokemon_data
+
+@app.route('/api/pokedex/suggestions')
+def get_pokemon_suggestions():
+    query = request.args.get('query', '').lower()
+    if not query or len(query) < 2:
+        return jsonify({'results': []})
+    
+    all_pokemon = requests.get("https://pokeapi.co/api/v2/pokemon?limit=1025").json()['results']
+    matches = [p for p in all_pokemon if p['name'].startswith(query)]
+    return jsonify({'results': matches})
 
 if __name__ == '__main__':
     app.run(debug=True)

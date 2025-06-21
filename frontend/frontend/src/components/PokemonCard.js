@@ -173,7 +173,7 @@ function PokemonCard({ pokemon }) {
         <div className = 'pokemon-card'>
           <div className = 'pkmn-name-id-img'>
             <div className = 'pkmn-name-id'>
-              <h1>{pokemon ? pokemon.name : 'Loading...'}</h1>
+              <h1>{pokemon ? pokemon.name.replace(/-/g, ' ') : 'Loading...'}</h1>
               <h2>#{pokemon ? pokemon.id.toString().padStart(4, '0') : '0000'}</h2>
             </div>
 
@@ -220,10 +220,9 @@ function PokemonCard({ pokemon }) {
             <div className = 'pkmn-abilities'>
               <p className = 'pkmn-abilities-text'>Abilities</p>
               <div className = 'pkmn-abilities-container'>
-                {pokemon
-                  ? pokemon.abilities.map((ability) =>
-                      ability.replace(/-/g, ' ')
-                    ).join(', ')
+                {pokemon ? pokemon.abilities.map((ability) =>
+                  ability.replace(/-/g, ' ')
+                  ).join(', ')
                   : 'Loading...'}
               </div>
             </div>

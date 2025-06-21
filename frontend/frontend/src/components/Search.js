@@ -44,12 +44,43 @@ function updateDivStyle(pokemonType) {
     });
 }
 
+function handleAutoComplete(event, fetchPokemon, setQuery) {
+    const query = event.target.value.trim().toLowerCase();
+    const suggestionsList = document.getElementById('suggestions-list');
+    suggestionsList.innerHTML = '';
+
+    if (query.length < 2) {
+        return;
+    }
+
+    fetch(`http://localhost:5000/api/pokedex/suggestions?query=${query}`)
+        .then(res => res.json())
+        .then(data => {
+            const pokemonNames = data.results
+            .map(pokemon => pokemon.name)
+            .filter(name => name.toLowerCase().startsWith(query));
+
+            pokemonNames.forEach(name => {
+                const li = document.createElement('li');
+                li.textContent = name;
+                li.addEventListener('click', () => {
+                    setQuery(name);
+                    suggestionsList.innerHTML = '';
+                    fetchPokemon(name);
+                });
+                suggestionsList.appendChild(li);
+            });
+        })
+        .catch(() => {});
+}
+
 function Search() {
     const [query, setQuery] = React.useState('');
     const [pokemon, setPokemon] = React.useState(null);
 
-    const fetchPokemon = () => {
-        if (!query) return;
+    const fetchPokemon = (searchTerm) => {
+        const term = searchTerm !== undefined ? searchTerm : query.trim().toLowerCase();
+        if (!term) return;
 
         // Allow letters, numbers, and hyphens for names
         const isId = /^\d+$/.test(query) && Number(query) > 0 && Number(query) <= 1025;
@@ -59,14 +90,18 @@ function Search() {
             return;
         }
 
-        fetch(`http://localhost:5000/api/pokedex?id=${query}`)
+        fetch(`http://localhost:5000/api/pokedex?id=${term}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
             })
             .then(data => setPokemon(data))
             .catch(() => {})
-            .finally(() => setQuery(''));
+            .finally(() => {
+                if (searchTerm === undefined) {
+                    setQuery('');
+                }
+            });
     };
 
     const handleKeyDown = (e) => {
@@ -89,11 +124,15 @@ function Search() {
                     placeholder = 'Search Pokémon by name or ID' 
                     className = 'search-bar'
                     value = {query}
-                    onChange = {(e) => setQuery(e.target.value)}
+                    onChange = {(e) => {
+                        setQuery(e.target.value);
+                        handleAutoComplete(e, fetchPokemon, setQuery);
+                    }}
                     onKeyDown = {handleKeyDown}
                     autocomplete = 'off'
                 />
-                <button className = 'search-button' onClick = {fetchPokemon}>Search</button>
+                <ul id = "suggestions-list" className = "suggestions-list"></ul>
+                <button className = 'search-button' onClick = {() => fetchPokemon()}>Search</button>
             </div>
             <PokemonCard pokemon = {pokemon} />
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PokemonCard from './PokemonCard';
+import {useLocation} from 'react-router-dom';
 
 function updateDivStyle(pokemonType) {
     const typeStyles = {
@@ -77,14 +78,15 @@ function handleAutoComplete(event, fetchPokemon, setQuery) {
 function Search() {
     const [query, setQuery] = React.useState('');
     const [pokemon, setPokemon] = React.useState(null);
+    const location = useLocation();
 
     const fetchPokemon = (searchTerm) => {
         const term = searchTerm !== undefined ? searchTerm : query.trim().toLowerCase();
         if (!term) return;
 
         // Allow letters, numbers, and hyphens for names
-        const isId = /^\d+$/.test(query) && Number(query) > 0 && Number(query) <= 1025;
-        const isName = /^[a-zA-Z0-9\-]+$/.test(query);
+        const isId = /^\d+$/.test(term) && Number(term) > 0 && Number(term) <= 1025;
+        const isName = /^[a-zA-Z0-9\-]+$/.test(term);
 
         if (!isId && !isName) {
             return;
@@ -115,6 +117,15 @@ function Search() {
             updateDivStyle(pokemon.types[0].toLowerCase());
         }
     }, [pokemon]);
+
+    React.useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const urlQuery = params.get('query');
+        if (urlQuery) {
+            setQuery(urlQuery);
+            fetchPokemon(urlQuery);
+        }
+    }, [location.search]);
 
     return (
         <div className = 'search-container'>

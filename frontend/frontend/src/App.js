@@ -3,6 +3,10 @@ import Home from './components/Home.js';
 import Search from './components/Search.js';
 import About from './components/About.js';
 import Help from './components/Help.js';
+import National from './components/National.js';
+import ShinyNational from './components/ShinyNational.js';
+import Stats from './components/Stats.js';
+import TypeChart from './components/TypeChart.js';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -65,39 +69,71 @@ function App() {
               </div>
             }
           />
+          <Route 
+            path = '/national' 
+            element = {
+              <div className = 'national-container'>
+                <National/>
+              </div>
+            }
+          />
+          <Route
+            path = '/stats'
+            element = {
+              <div className = 'stats-container'>
+                <Stats/>
+              </div>
+            }
+          />
+          <Route
+            path = '/type-chart'
+            element = {
+              <div className = 'type-chart-container'>
+                <TypeChart/>
+              </div>
+            }
+          />
+          <Route 
+            path = '/shiny-national' 
+            element = {
+              <div className = 'shiny-national-container'>
+                <ShinyNational/>
+              </div>
+            }
+          />
         </Routes>
       </div>
       <footer className = 'footer'>
-    <div>
-        <span>
+        <div>
+          <span>
             Pokédex &copy; { new Date().getFullYear() } | Created by Angel Robles-Ortiz
-        </span>
-        <br />
-        <span>
+          </span>
+          <br/>
+          <span>
             This is a fan-made project. All Pokémon content, images, and trademarks are © Nintendo, Game Freak, and The Pokémon Company. All rights reserved. No copyright infringement intended.
-        </span>
-        <br />
-        <span>
+          </span>
+          <br/>
+          <span>
             <a
-                href = "https://github.com/AngelRoblesOrtiz"
-                target = "_blank"
-                rel = "noopener noreferrer"
-                className = "footer-link"
+              href = "https://github.com/AngelRoblesOrtiz"
+              target = "_blank"
+              rel = "noopener noreferrer"
+              className = "footer-link"
             >
-                GitHub
+              GitHub
             </a>
             {" | "}
             <a
-                href = "https://www.linkedin.com/in/angel-robles-ortiz-187581286"
-                target = "_blank"
-                rel = "noopener noreferrer"
-                className = "footer-link"
+              href = "https://www.linkedin.com/in/angel-robles-ortiz-187581286"
+              target = "_blank"
+              rel = "noopener noreferrer"
+              className = "footer-link"
             >
-                LinkedIn
+              LinkedIn
             </a>
-        </span>
-    </div>
-</footer>
+          </span>
+        </div>
+      </footer>
     </Router>
   );
 }
